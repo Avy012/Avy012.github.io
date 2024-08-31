@@ -94,3 +94,13 @@ mark{
     background-color: yellow;
 }
   
+@media (max-width: 640px) {
+    .links {
+      width: 100%;
+      justify-content: center;
+    }
+    #navbarContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+}

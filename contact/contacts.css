@@ -58,7 +58,9 @@ img{
     width: auto;
 }
 
-
+#explain{
+    text-align: center;
+}
 
 #email{
     text-align: center;
