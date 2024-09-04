@@ -56,3 +56,22 @@ div{
     margin: 10px;
     padding: 20px;
 }
+
+@media (max-width: 640px) {
+    .links {
+        width: 100%;
+        justify-content: center;
+    }
+    #navbarContainer {
+        flex-direction: column;
+    }
+    .video{
+        display: grid;
+        grid-template-columns: auto ;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 10px;
+        padding: 20px;
+    }
+
+}

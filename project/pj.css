@@ -62,3 +62,29 @@ h3{
     font-size: 13px;
     
 }
+
+@media (max-width: 640px) {
+    .links {
+        width: 100%;
+        justify-content: center;
+    }
+    #navbarContainer {
+        flex-direction: column;
+    }
+    h3{
+        padding-top: 15px;
+    }
+    .video{
+        height: 220px;
+        width: 400px;
+    }
+    .projects{
+        display: grid;
+        grid-template-columns: auto ;
+        column-gap: 30px;
+        justify-content: center;
+        margin: 10px;
+        gap: 30px;
+    }
+
+}
