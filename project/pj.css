@@ -76,6 +76,31 @@
     object-fit: cover;
 }
 
+.project-placeholder {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 16 / 9;
+
+    border: 1px solid #d9ddda;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(135deg, #ecefed, #dfe3e1);
+
+    color: #828a86;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+}
+
 .project-copy {
     max-width: 520px;
 }
