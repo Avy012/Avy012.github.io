@@ -3,73 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pj.css" type="text/css" />
-    <title>Dahee's Projects</title>
+    <meta
+        name="description"
+        content="Selected projects by Dahee Kim in data analysis, AI, and recommender systems."
+    >
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="pj.css">
+    <title>Dahee Kim | Projects</title>
 </head>
+
 <body>
-    <div id="navbarContainer">
-        <div class="webName">Dahee Kim</div>
-        <div class="links">
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li class="active">
-                <a href="../project/">Projects</a>
-            </li>
-            <li><a href="../contact/">Contacts</a></li>
-            <li><a href="../more/">More</a></li>
-          </ul>
-        </div>
-      </div>
-      <br>
-      <h3>These are some projects I worked on.</h3><br><br>
 
-      <div class="projects">
-        <iframe 
-          class="video"
-          height="315"
-          width="560"
-          src="https://youtube.com/embed/Y7O_hZVVsT8" 
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          ></iframe>
-          <div>
-            <div class="bold">
-              Scarecrow with Raspberry Pi
-            </div> <br>
-            - I used Python to operate Raspberry Pi and connect server between website and Pi. <br><br>
-            - For the server Mosquitto was used and HTML, CSS, Javascript was used for the website.<br><br>
-            - When object gets close, ultrasonic sensor detect it and try to scare away them with bluetooth speaker and LED warning. <br> <br>
-            - When detected object turn out to be a person, alarm stops. <br>
-            <br>
-            <div class="warning">This video is in Korean with English subtitle.</div> 
-          </div>
-      
-      
-        <iframe 
-          class="video"
-          height="315"
-          width="560"
-          src="https://youtube.com/embed/L_lL2lYaS78" 
-          title="YouTube video player"
-          frameborder="0"
-          
-          ></iframe>
-          <div>
-            <div class="bold">
-              Movie list project on Android 
-            </div> <br>
-            - I used Java to create this project <br><br>
-            - <br><br>
-            
-            <br>
-            <div class="warning">This video is in Korean with English subtitle.</div> 
-          </div>
+    <header>
+        <nav id="navbarContainer">
+            <a href="../index.html" class="webName">Dahee Kim</a>
 
-          
-      </div>
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./index.html" class="active">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    
+
+    <main>
+
+        <section class="project-hero">
+            <p class="eyebrow">SELECTED WORK</p>
+            <h1>Projects</h1>
+            <p class="project-intro">
+                A small collection of recent academic and data-driven projects,
+                focusing on tourism analytics, representation learning, and applied AI.
+            </p>
+        </section>
+
+
+        <section class="project-list">
+
+            <article class="project-card">
+                <div class="project-image-wrap">
+                    <img
+                        src="../assets/projects/smart-preview.png"
+                        alt="Title slide for the SMART tourism analytics project"
+                        class="project-image"
+                    >
+                </div>
+
+                <div class="project-copy">
+                    <p class="project-meta">Data Analysis · 2026</p>
+                    <h2>TripAdvisor Reviews and Public Data for Korean Tourism Recommendations</h2>
+                    <p>
+                        Built a tourism analytics and recommendation concept by combining
+                        multilingual TripAdvisor reviews with public datasets on lodging,
+                        transportation, and local infrastructure. The project explores how
+                        sentiment, topic modeling, geospatial analysis, and congestion signals
+                        can support more personalized and sustainable travel recommendations.
+                    </p>
+
+                    <div class="project-tags" aria-label="Project methods">
+                        <span>TripAdvisor Reviews</span>
+                        <span>Public Data</span>
+                        <span>BERTopic</span>
+                        <span>GIS</span>
+                        <span>ABSA</span>
+                    </div>
+
+                    <a
+                        href="../assets/projects/smart-project.pptx"
+                        class="project-link"
+                    >
+                        Open presentation
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="project-card">
+                <div class="project-image-wrap">
+                    <img
+                        src="../assets/projects/lcrr-preview.png"
+                        alt="Title slide for the LLM-based serialization recommender systems project"
+                        class="project-image"
+                    >
+                </div>
+
+                <div class="project-copy">
+                    <p class="project-meta">Recommendation Systems · 2026</p>
+                    <h2>LLM-Based Serialization for Representation Learning in Recommender Systems</h2>
+                    <p>
+                        Proposed an LLM-based content serialization framework for recommender
+                        systems. The work focuses on reconstructing heterogeneous and incomplete
+                        item data into semantically consistent representations to improve rating
+                        prediction and personalized recommendation.
+                    </p>
+
+                    <div class="project-tags" aria-label="Project methods">
+                        <span>LLM</span>
+                        <span>Serialization</span>
+                        <span>Representation Learning</span>
+                        <span>Rating Prediction</span>
+                    </div>
+
+                    <a
+                        href="../assets/projects/lcrr-project.pptx"
+                        class="project-link"
+                    >
+                        Open presentation
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            © 2026 Dahee Kim
+        </p>
+    </footer>
+
 </body>
 </html>
