@@ -59,6 +59,14 @@
                         <span>LLM Reasoning</span>
                         <span>Research Planning</span>
                     </div>
+
+                    <button
+                        class="project-more-button"
+                        type="button"
+                        data-open-modal="research-note-modal"
+                    >
+                        More
+                    </button>
                 </div>
             </article>
 
@@ -125,12 +133,108 @@
 
     </main>
 
+    <div
+        class="project-modal"
+        id="research-note-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="research-note-title"
+        hidden
+    >
+        <div class="project-modal-backdrop" data-close-modal></div>
+
+        <section class="project-modal-panel">
+            <button class="project-modal-close" type="button" aria-label="Close" data-close-modal>
+                ×
+            </button>
+
+            <p class="project-meta">Research Note</p>
+            <h2 id="research-note-title">From Detection to Repair: Identifying Bottlenecks in LLM Agent Error Recovery</h2>
+
+            <div class="research-note-content">
+                <h3>Abstract</h3>
+                <p>
+                    Large Language Model (LLM)-based agents employ mechanisms such as
+                    self-reflection and self-correction to evaluate and correct errors that
+                    occur during task execution. Existing studies have sought to improve the
+                    error recovery capabilities of LLM agents through approaches including
+                    self-reflection, self-correction, and verification. However, prior
+                    research has primarily focused on whether agents ultimately succeed in
+                    recovering from errors, while relatively limited attention has been paid
+                    to the contribution of individual stages of the recovery process to
+                    overall recovery performance.
+                </p>
+                <p>
+                    To address this limitation, this study decomposes the error recovery
+                    process of LLM agents into multiple stages and analyzes the contribution
+                    of each stage to overall recovery performance. By examining recovery at
+                    the stage level, this study aims to enable a more fine-grained diagnosis
+                    of recovery failures and provide a basis for determining which stages
+                    should be prioritized when allocating limited reasoning and computational
+                    resources.
+                </p>
+
+                <h3>국문 초록</h3>
+                <p>
+                    대규모 언어모델(Large Language Model, LLM) 기반 에이전트는 과제
+                    수행 중 발생한 오류를 스스로 평가하고 수정하기 위해
+                    self-reflection, self-correction 등의 메커니즘을 활용하고 있다.
+                    기존 연구에서는 self-reflection, self-correction, verification
+                    등의 방법을 통해 에이전트의 오류 복구 성능을 향상시키고 있다.
+                    그러나 기존 연구는 주로 최종적인 복구 여부를 중심으로 성능을
+                    살펴보고 있어, 실제 오류 복구 과정의 각 단계에 따른 성능 변화에
+                    대한 분석은 부족하다.
+                </p>
+                <p>
+                    이에 본 연구는 LLM 에이전트의 오류 복구 과정을 단계별로
+                    분해하고, 각 단계의 역량이 전체 복구 성능에 미치는 기여도를
+                    분석하는 것을 목적으로 한다. 이를 통해 복구 실패의 원인을
+                    단계별로 진단하고, 제한된 추론 및 계산 자원을 어느 복구 단계에
+                    우선적으로 배분해야 하는지에 대한 근거를 제공하고자 한다.
+                </p>
+
+                <h3>Keywords</h3>
+                <p>Large Language Model (LLM), LLM Agent, Self-Reflection</p>
+            </div>
+        </section>
+    </div>
+
 
     <footer>
         <p>
             © 2026 Dahee Kim
         </p>
     </footer>
+
+    <script>
+        const modal = document.getElementById("research-note-modal");
+        const openButton = document.querySelector("[data-open-modal='research-note-modal']");
+        const closeButtons = modal.querySelectorAll("[data-close-modal]");
+
+        function openModal() {
+            modal.hidden = false;
+            document.body.classList.add("modal-open");
+            modal.querySelector(".project-modal-close").focus();
+        }
+
+        function closeModal() {
+            modal.hidden = true;
+            document.body.classList.remove("modal-open");
+            openButton.focus();
+        }
+
+        openButton.addEventListener("click", openModal);
+
+        closeButtons.forEach((button) => {
+            button.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !modal.hidden) {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
