@@ -384,6 +384,185 @@ main {
 
 
 /* =========================
+   Research Library
+========================= */
+
+.research-library {
+    padding-bottom: 110px;
+}
+
+.research-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.dataset-download {
+    flex: 0 0 auto;
+
+    border: 1px solid #cbd0cd;
+    border-radius: 4px;
+
+    background-color: white;
+    color: #2f3b35;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 9px 13px;
+
+    text-decoration: none;
+}
+
+.dataset-download:hover {
+    border-color: #1e583f;
+
+    color: #1e583f;
+}
+
+.research-toolbar {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(140px, 190px);
+    gap: 14px;
+
+    max-width: 840px;
+
+    margin-bottom: 18px;
+}
+
+.research-toolbar label {
+    display: grid;
+    gap: 7px;
+
+    color: #66716b;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.research-toolbar input,
+.research-toolbar select {
+    width: 100%;
+
+    border: 1px solid #d5dad7;
+    border-radius: 4px;
+
+    background-color: white;
+    color: #25372e;
+
+    font: inherit;
+    font-size: 14px;
+
+    padding: 11px 12px;
+}
+
+.research-toolbar input:focus,
+.research-toolbar select:focus {
+    border-color: #1e583f;
+
+    outline: 3px solid rgba(30, 88, 63, 0.13);
+}
+
+.research-status {
+    color: #66716b;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 16px;
+}
+
+.paper-table-wrap {
+    max-height: 620px;
+    overflow: auto;
+
+    border: 1px solid #e0e4e1;
+    border-radius: 4px;
+
+    background-color: white;
+}
+
+.paper-table {
+    width: 100%;
+    min-width: 920px;
+
+    border-collapse: collapse;
+}
+
+.paper-table th,
+.paper-table td {
+    border-bottom: 1px solid #edf0ee;
+
+    padding: 14px 16px;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.paper-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    background-color: #f4f6f4;
+    color: #5b6861;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.paper-table td {
+    color: #45504a;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.paper-table td:nth-child(1) {
+    width: 74px;
+
+    color: #6e7a73;
+
+    font-weight: 700;
+}
+
+.paper-table td:nth-child(2) {
+    width: 34%;
+
+    color: #22342b;
+
+    font-weight: 650;
+}
+
+.paper-table td:nth-child(5) {
+    overflow-wrap: anywhere;
+}
+
+.paper-table a {
+    color: #1e583f;
+
+    font-weight: 650;
+
+    text-decoration: none;
+}
+
+.paper-table a:hover {
+    text-decoration: underline;
+}
+
+.paper-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
    Course Cards
 ========================= */
 
@@ -619,6 +798,19 @@ footer {
 
     .course-grid {
         grid-template-columns: 1fr;
+    }
+
+    .research-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .research-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .paper-table-wrap {
+        max-height: 540px;
     }
 
 
