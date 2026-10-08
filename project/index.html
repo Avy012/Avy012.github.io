@@ -47,17 +47,17 @@
 
                 <div class="project-copy">
                     <p class="project-meta">Upcoming Research</p>
-                    <h2>Large Language Models and LLM Reasoning</h2>
+                    <h2>Analyzing Correction Persistence and Regression in LLM Agent Error Recovery through Controlled Interventions</h2>
                     <p>
-                        A new research direction exploring how large language models reason,
-                        represent information, and use intermediate steps to solve complex
-                        tasks. This project is currently in the early planning stage.
+                        A current research project examining whether functionally correct
+                        repository states are preserved, lost, or restored during continued
+                        execution by LLM-based software engineering agents.
                     </p>
 
                     <div class="project-tags" aria-label="Project keywords">
-                        <span>Large Language Model</span>
-                        <span>LLM Reasoning</span>
-                        <span>Research Planning</span>
+                        <span>LLM-Based Agents</span>
+                        <span>Software Engineering Agents</span>
+                        <span>Functional Regression</span>
                     </div>
 
                     <button
@@ -210,38 +210,72 @@
             </button>
 
             <p class="project-meta">Research Note</p>
-            <h2 id="research-note-title">단계별 통제 개입을 활용한 LLM Agent 오류 복구 병목 식별</h2>
+            <h2 id="research-note-title">
+                <span class="language-panel active" data-language-panel="ko-title" lang="ko">
+                    통제 개입을 활용한 LLM Agent 오류 복구 과정의 교정 상태 유지 및 회귀 분석
+                </span>
+                <span class="language-panel" data-language-panel="en-title" lang="en">
+                    Analyzing Correction Persistence and Regression in LLM Agent Error Recovery through Controlled Interventions
+                </span>
+            </h2>
+
+            <div class="language-toggle" role="group" aria-label="Research note language">
+                <button class="language-toggle-button active" type="button" data-language-button="ko" aria-pressed="true">
+                    한국어
+                </button>
+                <button class="language-toggle-button" type="button" data-language-button="en" aria-pressed="false">
+                    English
+                </button>
+            </div>
 
             <div class="research-note-content">
 
-                <h3>국문 초록</h3>
-                <p>
-                    LLM 기반 에이전트의 자율적 업무 수행 능력이 확대되면서, 장기 과업에서 발생한 오류를 복구하는 능력이 중요해지고 있다. 
-                    그러나 기존 연구는 주로 최종 성공 여부나 궤적에서 관찰되는 오류를 분석해 왔으며, 
-                    복구 과정의 어느 단계가 실제 복구를 제한하는지는 충분히 규명되지 않았다. 
-                    본 연구는 오류 복구를 탐지, 위치 식별, 진단, 수정 계획, 실행 및 검증 단계로 구분하고, 
-                    단계별 관찰 오류 빈도와 동일 실패 상태에서의 단계별 통제 개입 효과를 비교한다. 
-                    이를 통해 자주 관찰되는 오류와 실제 복구 병목의 일치 여부를 검증하고, 
-                    신뢰성 높은 AI 에이전트 설계를 위한 개선 우선순위를 제시하고자 한다.
-                </p>
+                <div class="language-panel active" data-language-panel="ko" lang="ko">
+                    <h3>국문 초록</h3>
+                    <p>
+                        본 연구는 LLM 기반 소프트웨어 엔지니어링 에이전트가 기능적으로 올바른 저장소 상태에 도달한 이후, 후속 실행 과정에서 해당 정확성이 유지되거나 손상되는 양상을 분석한다. 기존 평가는 주로 최종 과업 성공 여부에 초점을 맞추어 왔기 때문에, 수행 중 확보된 올바른 코드 상태가 이후 행동에 의해 어떻게 변화하는지 설명하는 데 한계가 있다. 이에 본 연구는 동일한 과업과 실행 이력을 바탕으로 기능적으로 올바른 저장소 상태를 통제하여 설정하고, 각 후속 행동 이후의 코드 상태를 평가함으로써 정확성 유지, 기능적 회귀, 재복구를 상태 전이 관점에서 추적한다. 또한 명시적인 정확성 피드백의 제공 여부를 비교하여, 이러한 정보가 기능적 회귀의 발생과 시점에 미치는 영향을 검증한다. 이를 통해 최종 성공 여부를 넘어 LLM 기반 소프트웨어 엔지니어링 에이전트의 지속 실행 신뢰성을 이해하기 위한 실증적 근거를 제공하고자 한다.
+                    </p>
 
-                <h3>Keywords</h3>
-                <p>Large Language Model (LLM), LLM Agent, Oracle</p>
+                    <h3>키워드</h3>
+                    <p>LLM-Based Agents, Software Engineering Agents, Error Recovery, Correction Persistence, Functional Regression, Agent Trajectory Analysis, Oracle Intervention</p>
 
-                <h3>Introduction</h3>
-                <p>
-                    Large language model (LLM)-based agents are increasingly designed to perform complex tasks through extended sequences of reasoning, planning, tool use, execution, and verification. Unlike conventional language models that generate a single response, agents continuously interact with external environments and make intermediate decisions that influence subsequent actions. This expanded autonomy creates new reliability challenges because an error at one point in a trajectory can persist, propagate, or be transformed into a different error in later steps. Accordingly, an agent’s capability should not be assessed solely by whether it eventually completes a task, but also by how it responds after an error has occurred. Error recovery is particularly important in long-horizon tasks, where successful completion often depends on recognizing a failure, identifying its location and cause, forming an appropriate repair plan, executing the repair, and determining whether the problem has actually been resolved. However, final task success alone provides limited insight into how these intermediate recovery states evolve. A more detailed understanding therefore requires treating recovery as a sequential process and examining whether correctness achieved at one stage is preserved as the agent proceeds to subsequent stages.
-                </p>
+                    <h3>서론</h3>
+                    <p>
+                        최근 대규모 언어모델(Large Language Model, LLM) 기반 소프트웨어 엔지니어링 에이전트는 코드 탐색, 수정 계획 수립, 실행 및 검증을 반복하며 복잡한 개발 과업을 자율적으로 수행하는 방향으로 발전하고 있다. 이러한 에이전트는 단일 응답을 생성하는 기존 언어모델과 달리 외부 실행 환경과 지속적으로 상호작용하며, 각 단계에서의 판단과 행동이 이후의 코드 상태에 영향을 미친다. 그러나 수행 과정이 길어지고 에이전트의 자율성이 확대될수록, 이미 올바르게 수정된 코드가 후속 행동으로 인해 손상되거나 이전에 해결된 문제가 다시 발생할 가능성이 존재한다. 특히 소프트웨어 개발에서는 특정 시점에 요구사항을 충족하는 것뿐만 아니라 이후의 수정 과정에서도 기능적 정확성을 유지하는 것이 중요하다. 그럼에도 에이전트의 성능은 주로 최종 과업 해결 여부를 중심으로 평가되므로, 수행 도중 확보된 올바른 코드 상태가 후속 행동에서 어떻게 변화하는지는 최종 성공 여부만으로 충분히 설명하기 어렵다. 따라서 LLM 기반 소프트웨어 엔지니어링 에이전트의 신뢰성을 이해하기 위해서는 최종 과업 성공 여부를 넘어, 기능적으로 올바른 코드 상태가 지속적인 실행 과정에서 유지되거나 손상되는 양상에 주목할 필요가 있다.
+                    </p>
 
-                <p>
-                    Recent research has begun to move beyond terminal success metrics by examining the internal dynamics of agent failures and recovery. Self-correction and verification approaches attempt to improve agent performance by allowing models to critique prior outputs, incorporate execution feedback, and iteratively revise their actions. More recent trajectory-level studies focus on identifying where failures originate and how they affect later behavior. For example, TRAJDEBUG traces the lifecycle of errors in long agent trajectories and distinguishes local errors from those that remain responsible for terminal failure, highlighting the importance of analyzing downstream consequences rather than merely counting observed mistakes. Complementing this perspective, ORACLE-SWE isolates several information signals in software-engineering agents, including reproduction tests, regression tests, edit locations, execution contexts, and API usage, and measures how providing idealized information changes final task performance. Similarly, PROBE structures failed-run telemetry into diagnosis and recovery guidance, but its results reveal a diagnosis-recovery gap: accurate diagnosis does not necessarily lead to successful recovery unless the diagnosis is converted into actionable and executable guidance. These findings collectively suggest that obtaining correct information or reaching a correct intermediate state does not guarantee that subsequent stages will remain correct. In other words, recovery may fail not only because a stage is initially wrong, but also because correctness achieved earlier is lost during later transitions.
-                </p>
+                    <p>
+                        LLM 기반 에이전트의 신뢰성을 향상시키기 위한 연구는 오류를 탐지하고 수정하는 능력을 강화하는 데 주목해 왔다. 그러나 수정 과정이 반복된다는 사실이 반드시 더 정확한 결과로 이어지는 것은 아니다. 외부 피드백에 의존하지 않는 자기 교정 과정에서는 이미 올바른 답변이 잘못된 답변으로 변경될 수 있으며(Huang et al., 2024), 장기적인 소프트웨어 개발 과정에서도 반복적인 코드 수정에 따라 구조적 복잡성과 불필요한 코드가 누적되는 현상이 관찰된다(SlopCodeBench, 2026). 이러한 결과는 에이전트의 신뢰성을 평가할 때 오류를 수정하는 능력뿐 아니라, 후속 행동이 기존 결과에 미치는 영향도 고려해야 함을 시사한다. 한편, 이러한 문제에 대응하기 위해 에이전트가 활용하는 정보와 실행 상태를 개선하려는 연구도 이루어지고 있다. 과거 관찰 정보와 실제 실행 환경의 불일치를 관리하는 명시적 상태 추적 메커니즘은 과업 해결 성능과 실행 효율성을 높일 수 있으며(Ledger, 2026), 재현 테스트와 실행 문맥 등 정확한 정보를 제공하는 방식 역시 에이전트의 문제 해결 성능을 개선할 수 있다(ORACLE-SWE). 그러나 올바른 정보를 제공하거나 실행 상태를 효과적으로 관리하여 최종 성능을 향상시키는 것과, 이미 확보된 기능적 정확성이 후속 행동에서도 유지되는지는 서로 다른 문제이다. 특히 추가적인 수정이 기존 결과를 손상시킬 가능성이 존재한다면, 에이전트가 올바른 상태에 도달했는지뿐 아니라 그 상태가 이후 실행 과정에서 어떻게 변화하는지를 독립적으로 분석할 필요가 있다.
+                    </p>
 
-                <p>
-                    Despite this progress, existing studies provide limited explanation of how correctness is preserved or degraded across the successive stages of recovery. Prior work typically identifies critical errors, evaluates the value of particular information signals, or measures whether an intervention ultimately improves task success. What remains less understood is what happens after a recovery stage has been made correct: whether the agent maintains that correct state in subsequent reasoning and action, and at which transition it first regresses to an incorrect state. This distinction is important because two agents may receive the same correct diagnosis yet diverge later. One may translate it into a valid repair plan, whereas the other may form an incorrect plan or execute the correct plan improperly. The present study therefore conceptualizes LLM-agent error recovery as a sequence of stage-level state transitions, including error detection, localization, diagnosis, repair planning, execution, and verification. For failed trajectories, a controlled intervention is introduced at a selected stage to establish a known-correct recovery state, after which the agent is allowed to continue the remaining recovery process. The analysis then examines whether correctness is preserved in downstream stages and identifies transitions in which a correct state changes into an incorrect one. Accordingly, the study asks: (RQ1) How reliably does an LLM agent maintain correctness across successive stages of error recovery? (RQ2) At which stage transitions does downstream regression most frequently occur after a correct recovery state has been established? By focusing on the preservation and loss of correctness rather than only final success, this study aims to provide a finer-grained account of recovery dynamics and to inform the design of agent systems that can sustain correct reasoning and action throughout the recovery process.
-                </p>
+                    <p>
+                        그러나 기존 연구들은 주로 자기 교정 전후의 정확도 변화, 반복 개발 과정의 구조적 품질 저하, 실행 상태 관리에 따른 성능 개선 또는 정확한 정보 제공 이후의 최종 과업 성공률에 초점을 맞추어 왔다. 이에 비해 기능적으로 올바른 저장소 상태가 확보된 이후, 에이전트의 연속적인 행동에 따라 해당 상태가 언제 부정확한 상태로 전이하고, 이후 다시 복구되는지에 대한 종단적 분석은 상대적으로 제한적이다. 특히 코드의 구조적 품질 저하와 기능적 오류 발생은 구분되어야 하며, 정확한 정보의 제공이나 최종 과업 성공만으로는 중간 과정에서 발생한 기능적 회귀(functional regression)를 충분히 설명할 수 없다. 이에 본 연구는 LLM 기반 소프트웨어 엔지니어링 에이전트의 오류 복구 및 후속 실행을 기능적 정확성에 따른 상태 전이 과정으로 개념화하고, 기능적으로 올바른 저장소 상태에서 시작한 에이전트의 후속 행동을 추적하고자 한다. 구체적으로 동일한 과업과 실행 이력을 바탕으로 올바른 저장소 상태를 통제하여 설정한 뒤, 각 행동 이후의 코드 상태를 평가함으로써 기능적 정확성의 유지(correction persistence), 회귀(regression), 재복구(recovery)를 분석한다. 또한 명시적인 정확성 피드백의 제공 여부를 비교하여, 이러한 정보가 기능적 회귀의 발생과 시점에 미치는 영향을 검증하고자 한다. 이를 위해 다음의 연구 질문을 설정한다. (RQ1) LLM 기반 소프트웨어 엔지니어링 에이전트는 기능적으로 올바른 저장소 상태에서 후속 실행을 지속할 때 얼마나 자주, 어느 시점에 기능적 회귀를 경험하는가? (RQ2) 명시적인 정확성 피드백의 제공은 기능적 회귀의 발생과 시점에 어떠한 영향을 미치는가? (RQ3) 기능적 회귀 이후 에이전트는 어느 정도 다시 올바른 상태로 복구하며, 어떠한 후속 행동이 이러한 복구와 연관되는가? 본 연구는 최종 과업 성공 여부를 중심으로 한 기존 평가를 보완하여, 에이전트의 지속적인 실행 과정에서 기능적 정확성이 유지되고 손실되는 양상을 규명하고, 안정적인 오류 복구 및 실행 상태 관리를 위한 실증적 근거를 제공하고자 한다.
+                    </p>
+                </div>
 
-                
+                <div class="language-panel" data-language-panel="en" lang="en">
+                    <h3>Abstract</h3>
+                    <p>
+                        This study investigates whether functionally correct repository states reached by LLM-based software engineering agents are preserved, destabilized, or restored during continued execution. Existing evaluations primarily focus on final task success, which provides limited insight into how correct code states obtained during execution are affected by subsequent agent actions. To address this limitation, this study establishes controlled, functionally correct repository states under matched task and trajectory-prefix conditions, then evaluates the repository state after each subsequent action. This design enables a state-transition analysis of correction persistence, functional regression, and recovery. The study also compares conditions with and without explicit correctness feedback to examine how such information affects the occurrence and timing of functional regression. By moving beyond terminal success, this research aims to provide empirical evidence for understanding the reliability of LLM-based software engineering agents during sustained execution.
+                    </p>
+
+                    <h3>Keywords</h3>
+                    <p>LLM-Based Agents, Software Engineering Agents, Error Recovery, Correction Persistence, Functional Regression, Agent Trajectory Analysis, Oracle Intervention</p>
+
+                    <h3>Introduction</h3>
+                    <p>
+                        Large language model (LLM)-based software engineering agents are increasingly capable of autonomously performing complex development tasks through iterative code exploration, repair planning, execution, and verification. Unlike conventional language models that generate a single response, these agents continuously interact with external execution environments, where intermediate decisions and actions influence subsequent repository states. However, as task execution becomes more prolonged and autonomous, subsequent agent actions may compromise previously correct code or reintroduce errors that have already been resolved. In software development, reliability requires not only satisfying functional requirements at a particular point in time but also preserving functional correctness throughout subsequent modifications. Nevertheless, agent performance is predominantly evaluated in terms of final task resolution, which provides limited insight into how previously correct repository states evolve during continued execution. Therefore, understanding the reliability of LLM-based software engineering agents requires moving beyond terminal task success to examine whether and how functionally correct repository states are preserved or destabilized by subsequent agent actions.
+                    </p>
+
+                    <p>
+                        Research on the reliability of LLM-based agents has largely emphasized improving their ability to detect and correct errors. However, repeated revision does not necessarily lead to more accurate outcomes. Without external feedback, self-correction may cause models to replace initially correct answers with incorrect ones (Huang et al., 2024), while iterative software development can lead to the accumulation of structural complexity and unnecessary code (SlopCodeBench, 2026). These findings suggest that evaluating agent reliability requires examining not only the ability to correct errors but also the consequences of subsequent actions on previously established results. In parallel, efforts to improve agent reliability have increasingly focused on the information and execution states available to agents. Explicit mechanisms for managing inconsistencies between historical observations and the actual execution environment can improve task resolution and efficiency (Ledger, 2026), while providing accurate information, such as reproduction tests and execution contexts, can enhance software engineering agents' problem-solving performance (ORACLE-SWE). Nevertheless, improving final task performance through accurate information or effective execution-state management is conceptually distinct from ensuring that previously established functional correctness is preserved during subsequent execution. If additional modifications can compromise previously correct results, understanding agent reliability requires examining not only whether a correct state is reached but also how that state evolves throughout continued execution.
+                    </p>
+
+                    <p>
+                        Despite these advances, existing research has primarily examined accuracy changes before and after self-correction, structural code degradation during iterative development, performance improvements through execution-state management, or final task resolution following the provision of accurate information. Comparatively less attention has been devoted to the longitudinal evolution of functionally correct repository states during continued agent execution, particularly when correctness is lost and whether it can subsequently be restored. Importantly, structural code deterioration should be distinguished from functional regression, while access to accurate information or eventual task success does not necessarily reveal intermediate transitions from correct to incorrect states. To address this gap, this study conceptualizes error recovery and continued execution in LLM-based software engineering agents as a sequence of functional correctness state transitions. Specifically, the study establishes controlled, functionally correct repository states under matched task and trajectory-prefix conditions and evaluates subsequent repository states after individual agent actions. This approach enables the analysis of correction persistence, functional regression, and subsequent recovery throughout continued execution. Furthermore, by comparing conditions with and without explicit correctness feedback, the study investigates how such feedback influences the occurrence and timing of functional regression. Accordingly, this study addresses three research questions: (RQ1) How frequently, and at what points during continued execution, do LLM-based software engineering agents regress from functionally correct to incorrect repository states? (RQ2) How does explicit correctness feedback affect the occurrence and timing of functional regression? (RQ3) To what extent do agents recover functional correctness after regression, and what subsequent actions are associated with recovery? By shifting the analytical focus from terminal task success to the preservation, loss, and restoration of functional correctness, this study seeks to provide a more fine-grained understanding of agent reliability and empirical insights into the design of robust error recovery and execution-state management mechanisms.
+                    </p>
+                </div>
+
             </div>
         </section>
     </div>
@@ -262,6 +296,8 @@
         const paperStatus = document.getElementById("paperStatus");
         const paperSearch = document.getElementById("paperSearch");
         const paperYear = document.getElementById("paperYear");
+        const languageButtons = modal.querySelectorAll("[data-language-button]");
+        const languagePanels = modal.querySelectorAll("[data-language-panel]");
         let papers = [];
 
         function openModal() {
@@ -286,6 +322,23 @@
             if (event.key === "Escape" && !modal.hidden) {
                 closeModal();
             }
+        });
+
+        languageButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedLanguage = button.dataset.languageButton;
+
+                languageButtons.forEach((currentButton) => {
+                    const isActive = currentButton.dataset.languageButton === selectedLanguage;
+                    currentButton.classList.toggle("active", isActive);
+                    currentButton.setAttribute("aria-pressed", String(isActive));
+                });
+
+                languagePanels.forEach((panel) => {
+                    const panelLanguage = panel.dataset.languagePanel.replace("-title", "");
+                    panel.classList.toggle("active", panelLanguage === selectedLanguage);
+                });
+            });
         });
 
         function parseCsv(text) {
