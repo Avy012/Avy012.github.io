@@ -8,7 +8,7 @@
         content="Selected projects by Dahee Kim in data analysis, AI, and recommender systems."
     >
     <link rel="stylesheet" href="../index.css?v=20261001">
-    <link rel="stylesheet" href="./pj.css?v=20261001-2">
+    <link rel="stylesheet" href="./pj.css?v=20261008-1">
     <title>Dahee Kim | Projects</title>
 </head>
 
@@ -214,7 +214,7 @@
                 <span class="language-panel active" data-language-panel="ko-title" lang="ko">
                     통제 개입을 활용한 LLM Agent 오류 복구 과정의 교정 상태 유지 및 회귀 분석
                 </span>
-                <span class="language-panel" data-language-panel="en-title" lang="en">
+                <span class="language-panel" data-language-panel="en-title" lang="en" hidden>
                     Analyzing Correction Persistence and Regression in LLM Agent Error Recovery through Controlled Interventions
                 </span>
             </h2>
@@ -253,7 +253,7 @@
                     </p>
                 </div>
 
-                <div class="language-panel" data-language-panel="en" lang="en">
+                <div class="language-panel" data-language-panel="en" lang="en" hidden>
                     <h3>Abstract</h3>
                     <p>
                         This study investigates whether functionally correct repository states reached by LLM-based software engineering agents are preserved, destabilized, or restored during continued execution. Existing evaluations primarily focus on final task success, which provides limited insight into how correct code states obtained during execution are affected by subsequent agent actions. To address this limitation, this study establishes controlled, functionally correct repository states under matched task and trajectory-prefix conditions, then evaluates the repository state after each subsequent action. This design enables a state-transition analysis of correction persistence, functional regression, and recovery. The study also compares conditions with and without explicit correctness feedback to examine how such information affects the occurrence and timing of functional regression. By moving beyond terminal success, this research aims to provide empirical evidence for understanding the reliability of LLM-based software engineering agents during sustained execution.
@@ -324,22 +324,28 @@
             }
         });
 
+        function setResearchNoteLanguage(selectedLanguage) {
+            languageButtons.forEach((currentButton) => {
+                const isActive = currentButton.dataset.languageButton === selectedLanguage;
+                currentButton.classList.toggle("active", isActive);
+                currentButton.setAttribute("aria-pressed", String(isActive));
+            });
+
+            languagePanels.forEach((panel) => {
+                const panelLanguage = panel.dataset.languagePanel.replace("-title", "");
+                const isActive = panelLanguage === selectedLanguage;
+                panel.classList.toggle("active", isActive);
+                panel.hidden = !isActive;
+            });
+        }
+
         languageButtons.forEach((button) => {
             button.addEventListener("click", () => {
-                const selectedLanguage = button.dataset.languageButton;
-
-                languageButtons.forEach((currentButton) => {
-                    const isActive = currentButton.dataset.languageButton === selectedLanguage;
-                    currentButton.classList.toggle("active", isActive);
-                    currentButton.setAttribute("aria-pressed", String(isActive));
-                });
-
-                languagePanels.forEach((panel) => {
-                    const panelLanguage = panel.dataset.languagePanel.replace("-title", "");
-                    panel.classList.toggle("active", panelLanguage === selectedLanguage);
-                });
+                setResearchNoteLanguage(button.dataset.languageButton);
             });
         });
+
+        setResearchNoteLanguage("ko");
 
         function parseCsv(text) {
             const rows = [];
