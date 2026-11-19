@@ -8,7 +8,9 @@
         content="Selected projects by Dahee Kim in data analysis, AI, and recommender systems."
     >
     <link rel="stylesheet" href="../index.css?v=20261001">
-    <link rel="stylesheet" href="./pj.css?v=20261008-1">
+    <link rel="stylesheet" href="./pj.css?v=20261119-6">
+    <script src="../assets/text-content.js" defer></script>
+    <script src="./research-note.js" defer></script>
     <title>Dahee Kim | Projects</title>
 </head>
 
@@ -40,94 +42,68 @@
 
         <section class="project-list">
 
-          <article class="project-card project-card-featured">
-                <div class="project-placeholder" aria-label="Upcoming research image placeholder">
-                    <span>In Progress...</span>
-                </div>
+            <article class="project-card project-card-featured">
+                <a
+                    class="project-image-wrap"
+                    href="../assets/projects/current-research-presentation.pdf?v=20261119-2"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="View the conference presentation PDF (opens in a new tab)"
+                >
+                    <img
+                        src="../assets/projects/current-research-preview.png?v=20261119-2"
+                        alt="Cover slide of the Korean Society of Management Information Systems presentation"
+                        class="project-image"
+                        width="1280"
+                        height="720"
+                    >
+                </a>
 
                 <div class="project-copy">
-                    <p class="project-meta">Upcoming Research</p>
-                    <h2>Analyzing Correction Persistence and Regression in LLM Agent Error Recovery through Controlled Interventions</h2>
+                    <p class="project-meta">Software Engineering · 2026</p>
+                    <h2>Improving Task Automation Reliability in LLM-Based Software Agents through Oracle-Based Initialization</h2>
                     <p>
-                        A current research project examining whether functionally correct
-                        repository states are preserved, lost, or restored during continued
-                        execution by LLM-based software engineering agents.
+                        Using SWE-bench Verified, this study starts software agents from a
+                        verified reference fix and tracks whether later actions preserve,
+                        break, or restore functional correctness. It also examines whether
+                        explicit correctness feedback helps prevent regressions.
                     </p>
 
                     <div class="project-tags" aria-label="Project keywords">
-                        <span>LLM-Based Agents</span>
-                        <span>Software Engineering Agents</span>
+                        <span>LLM-Based Software Agents</span>
+                        <span>Oracle-Based Initialization</span>
+                        <span>Correction Persistence</span>
                         <span>Functional Regression</span>
+                        <span>Correctness Feedback</span>
                     </div>
 
-                    <button
-                        class="project-more-button"
-                        type="button"
-                        data-open-modal="research-note-modal"
-                    >
-                        More
-                    </button>
-                </div>
-
-                <div class="project-research-library research-library" aria-labelledby="research-library-title">
-
-                    <div class="section-heading research-heading">
-                        <div>
-                            <p class="section-label">RESEARCH DATA</p>
-                            <h2 id="research-library-title">Scopus Papers for Current Research</h2>
-                        </div>
-
-                        <a
-                            href="../assets/projects/scopus_papers.csv"
-                            class="dataset-download"
-                            download
+                    <div class="project-actions">
+                        <button
+                            class="project-more-button"
+                            type="button"
+                            data-open-modal="research-note-modal"
                         >
-                            Download CSV
+                            More
+                        </button>
+                        <a
+                            class="project-link"
+                            href="../assets/projects/current-research-presentation.pdf?v=20261119-2"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="View PDF (opens in a new tab)"
+                        >
+                            View PDF
                         </a>
+                        <button
+                            class="project-link"
+                            type="button"
+                            id="open-paper-dialog"
+                            aria-haspopup="dialog"
+                            aria-controls="paper-dialog"
+                        >
+                            View CSV
+                        </button>
                     </div>
-
-                    <div class="research-toolbar" aria-label="Research paper controls">
-                        <label class="research-search">
-                            <span>Search papers</span>
-                            <input
-                                type="search"
-                                id="paperSearch"
-                                placeholder="Title, author, source, DOI"
-                                autocomplete="off"
-                            >
-                        </label>
-
-                        <label class="research-year">
-                            <span>Year</span>
-                            <select id="paperYear">
-                                <option value="">All years</option>
-                            </select>
-                        </label>
-                    </div>
-
-                    <p class="research-status" id="paperStatus">
-                        Loading paper data...
-                    </p>
-
-                    <div class="paper-table-wrap">
-                        <table class="paper-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Year</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Authors</th>
-                                    <th scope="col">Source</th>
-                                    <th scope="col">DOI</th>
-                                </tr>
-                            </thead>
-                            <tbody id="paperTableBody">
-                                <tr>
-                                    <td colspan="5">Loading...</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                 </div>
             </article>
 
@@ -210,76 +186,84 @@
             </button>
 
             <p class="project-meta">Research Note</p>
-            <h2 id="research-note-title">
-                <span class="language-panel active" data-language-panel="ko-title" lang="ko">
-                    통제 개입을 활용한 LLM Agent 오류 복구 과정의 교정 상태 유지 및 회귀 분석
-                </span>
-                <span class="language-panel" data-language-panel="en-title" lang="en" hidden>
-                    Analyzing Correction Persistence and Regression in LLM Agent Error Recovery through Controlled Interventions
-                </span>
-            </h2>
+            <h2 id="research-note-title">Research Note</h2>
 
             <div class="language-toggle" role="group" aria-label="Research note language">
-                <button class="language-toggle-button active" type="button" data-language-button="ko" aria-pressed="true">
-                    한국어
-                </button>
-                <button class="language-toggle-button" type="button" data-language-button="en" aria-pressed="false">
+                <button class="language-toggle-button active" type="button" data-language-button="en" aria-pressed="true">
                     English
                 </button>
+                <button class="language-toggle-button" type="button" data-language-button="ko" aria-pressed="false">
+                    한국어
+                </button>
             </div>
 
-            <div class="research-note-content">
-
-                <div class="language-panel active" data-language-panel="ko" lang="ko">
-                    <h3>국문 초록</h3>
-                    <p>
-                        LLM 기반 소프트웨어 엔지니어링 에이전트(Software Engineering Agent, SWE Agent)는 코드 탐색, 수정 및 검증을 반복하며 소프트웨어 문제를 해결하지만, 특정 시점에 올바른 코드를 확보하더라도 후속 행동에서 해당 상태가 유지된다는 보장은 없다. 기존 연구에서는 자기 교정(Self-Correction) 과정에서의 성능 저하와 반복적인 코드 수정에 따른 품질 저하가 보고되었으나, 기능적으로 올바른 저장소 상태가 후속 실행 과정에서 어떻게 변화하는지에 대한 분석은 여전히 필요하다. 이에 본 연구는 LLM 기반 SWE Agent의 교정 상태 유지(Correction Persistence)와 기능적 회귀(Functional Regression)를 상태 전이 관점에서 분석하고자 한다. 구체적으로 동일한 과업과 실행 이력을 기준으로 기능적으로 올바른 저장소 상태를 통제하여 설정하고, 이후 Agent의 행동에 따른 코드 상태를 평가하여 정확성 유지, 기능적 회귀 및 재복구 양상을 추적한다. 또한 명시적인 정확성 피드백의 제공 여부를 비교하여 피드백이 회귀의 발생 시점과 빈도, 회귀 이후 재복구에 미치는 영향을 분석한다. 이를 통해 최종 과업 성공 여부 중심의 평가를 보완하고, LLM 기반 SWE Agent의 지속적인 실행 과정에서 기능적 정확성이 유지되거나 손실되는 조건을 이해하기 위한 실증적 근거를 제공하고자 한다.
-                    </p>
-
-                    <h3>키워드</h3>
-                    <p>LLM-Based Agents, Software Engineering Agents, Error Recovery, Correction Persistence, Functional Regression, Agent Trajectory Analysis, Oracle Intervention</p>
-
-                    <h3>서론</h3>
-                    <p>
-                        최근 대규모 언어모델(Large Language Model, LLM) 기반 소프트웨어 엔지니어링 에이전트(Software Engineering Agent, SWE Agent)는 코드 탐색, 파일 수정, 명령어 실행 및 테스트 수행을 반복하며 소프트웨어 개발 과업을 자율적으로 해결하는 방향으로 발전하고 있다(Yang et al., 2024). 이러한 Agent는 외부 실행 환경과 상호작용하며 이전 행동의 결과를 바탕으로 후속 행동을 결정하므로, 과업 해결 과정에서 여러 차례의 코드 수정과 상태 변화가 발생한다. 그러나 반복적인 수정이 반드시 더 나은 결과로 이어지는 것은 아니며, 이미 올바르게 수정된 코드가 후속 행동으로 인해 변경되거나 손상될 가능성이 존재한다. 특히 기존의 SWE-bench와 같은 평가 체계는 최종 제출된 패치의 과업 해결 여부를 중심으로 성능을 평가하므로(Jimenez et al., 2024), 실행 도중 기능적으로 올바른 코드 상태에 도달했더라도 해당 상태가 이후 행동에서 유지되었는지는 최종 결과만으로 파악하기 어렵다. 이는 Agent가 특정 시점에 올바른 코드를 생성하는 능력과 후속 실행 과정에서 해당 코드의 기능적 정확성을 유지하는 능력이 서로 구분되어야 함을 의미한다. 따라서 LLM 기반 SWE Agent의 신뢰성을 이해하기 위해서는 최종 과업 성공 여부뿐 아니라, 연속적인 실행 과정에서 기능적으로 올바른 상태가 유지되거나 손실되는 양상에 주목할 필요가 있다.
-                    </p>
-
-                    <p>
-                        LLM 기반 Agent의 오류 복구 및 신뢰성에 관한 연구에서는 반복적인 수정 과정의 한계와 이를 개선하기 위한 피드백 및 정보 제공의 역할이 논의되어 왔다. 자기 교정(Self-Correction) 연구에서는 외부 피드백 없이 기존 답변을 수정하는 과정이 반드시 정확도 향상으로 이어지지 않으며, 오히려 올바른 답변을 부정확하게 변경할 수 있음이 보고되었다(Huang et al., 2024). 이러한 문제는 여러 차례의 수정과 검증을 수행하는 SWE Agent의 실행 과정에서도 중요하게 나타난다. SWE Agent의 실행 궤적을 분석한 Kim et al.(2026)은 이전에 생성한 올바른 코드가 후속 수정으로 손상되는 현상을 Coherence Collapse로 설명하였으며, 이는 오류를 수정하는 능력뿐 아니라 수정된 결과를 유지하는 능력 역시 중요함을 시사한다. 또한 SlopCodeBench는 반복적인 개발 과업에서 코드의 중복성과 구조적 복잡성이 누적되는 현상을 분석하여, 단일 시점의 기능적 성공이 후속 개발 과정의 코드 품질까지 보장하지는 않음을 보여주었다(Orlanski et al., 2026). 이처럼 반복적인 수정 과정의 한계가 확인되면서, Agent의 판단을 지원하기 위한 외부 피드백과 정확한 정보 제공의 역할도 중요하게 논의되고 있다. Huang et al.(2024)이 외부 피드백 없는 자기 교정의 한계를 제시한 것과 달리, ORACLE-SWE는 재현 테스트, 회귀 테스트, 수정 위치 및 실행 문맥 등의 정확한 정보를 제공했을 때 Agent의 최종 과업 해결 성능이 어떻게 변화하는지 분석하였다(Li et al., 2026). 이러한 연구들은 반복적인 수정 과정에서 발생할 수 있는 오류와 정보 제공의 효과를 이해하는 데 기여하였으나, 올바른 상태에 도달한 이후의 기능적 정확성이 후속 행동에 따라 어떻게 변화하는지는 별도의 분석이 필요한 문제이다.
-                    </p>
-
-                    <p>
-                        기존 연구에서는 반복적인 코드 수정에 따른 품질 저하와 올바른 코드의 손상 가능성을 확인하고, 정확한 정보 제공이 과업 해결에 미치는 영향을 분석해 왔으나, 기능적으로 올바른 저장소 상태에서 출발한 Agent가 후속 실행 과정에서 언제 정확성을 상실하고 다시 복구하는지에 대한 체계적인 분석은 상대적으로 제한적이다. 특히 코드의 구조적 품질 저하나 Gold Patch와의 불일치가 반드시 기능적 오류를 의미하는 것은 아니므로, 기능적 정확성을 기준으로 한 상태 전이 분석이 요구된다. 이에 본 연구는 LLM 기반 SWE Agent의 후속 실행 과정에서 교정 상태 유지(Correction Persistence), 기능적 회귀(Functional Regression) 및 재복구(Recovery)가 나타나는 양상을 분석하고, 명시적인 정확성 피드백의 영향을 검토하고자 한다. 이를 위해 동일한 과업과 실행 이력을 기준으로 기능적으로 올바른 저장소 상태를 통제하여 설정하고, 해당 상태에서 Agent의 실행을 재개하여 후속 행동에 따른 코드 상태 변화를 추적한다. 각 행동 이후의 저장소 상태를 기능적 정확성에 따라 평가함으로써 올바른 상태의 유지, 부정확한 상태로의 전이 및 이후 재복구의 발생 여부와 시점을 분석한다. 또한 명시적인 정확성 피드백의 제공 여부를 통제된 실험 조건으로 비교하여, 피드백이 기능적 회귀의 발생 가능성과 발생 시점에 미치는 영향을 검증한다. 본 연구는 최종 과업 성공 여부 중심의 평가를 보완하고, LLM 기반 SWE Agent의 지속적인 실행 신뢰성과 효과적인 피드백 설계를 이해하기 위한 실증적 근거를 제공하고자 한다.
-                    </p>
-                </div>
-
-                <div class="language-panel" data-language-panel="en" lang="en" hidden>
-                    <h3>Abstract</h3>
-                    <p>
-                        This study investigates whether functionally correct repository states reached by LLM-based software engineering agents are preserved, destabilized, or restored during continued execution. Existing evaluations primarily focus on final task success, which provides limited insight into how correct code states obtained during execution are affected by subsequent agent actions. To address this limitation, this study establishes controlled, functionally correct repository states under matched task and trajectory-prefix conditions, then evaluates the repository state after each subsequent action. This design enables a state-transition analysis of correction persistence, functional regression, and recovery. The study also compares conditions with and without explicit correctness feedback to examine how such information affects the occurrence and timing of functional regression. By moving beyond terminal success, this research aims to provide empirical evidence for understanding the reliability of LLM-based software engineering agents during sustained execution.
-                    </p>
-
-                    <h3>Keywords</h3>
-                    <p>LLM-Based Agents, Software Engineering Agents, Error Recovery, Correction Persistence, Functional Regression, Agent Trajectory Analysis, Oracle Intervention</p>
-
-                    <h3>Introduction</h3>
-                    <p>
-                        Large language model (LLM)-based software engineering agents are increasingly capable of autonomously performing complex development tasks through iterative code exploration, repair planning, execution, and verification. Unlike conventional language models that generate a single response, these agents continuously interact with external execution environments, where intermediate decisions and actions influence subsequent repository states. However, as task execution becomes more prolonged and autonomous, subsequent agent actions may compromise previously correct code or reintroduce errors that have already been resolved. In software development, reliability requires not only satisfying functional requirements at a particular point in time but also preserving functional correctness throughout subsequent modifications. Nevertheless, agent performance is predominantly evaluated in terms of final task resolution, which provides limited insight into how previously correct repository states evolve during continued execution. Therefore, understanding the reliability of LLM-based software engineering agents requires moving beyond terminal task success to examine whether and how functionally correct repository states are preserved or destabilized by subsequent agent actions.
-                    </p>
-
-                    <p>
-                        Research on the reliability of LLM-based agents has largely emphasized improving their ability to detect and correct errors. However, repeated revision does not necessarily lead to more accurate outcomes. Without external feedback, self-correction may cause models to replace initially correct answers with incorrect ones (Huang et al., 2024), while iterative software development can lead to the accumulation of structural complexity and unnecessary code (SlopCodeBench, 2026). These findings suggest that evaluating agent reliability requires examining not only the ability to correct errors but also the consequences of subsequent actions on previously established results. In parallel, efforts to improve agent reliability have increasingly focused on the information and execution states available to agents. Explicit mechanisms for managing inconsistencies between historical observations and the actual execution environment can improve task resolution and efficiency (Ledger, 2026), while providing accurate information, such as reproduction tests and execution contexts, can enhance software engineering agents' problem-solving performance (ORACLE-SWE). Nevertheless, improving final task performance through accurate information or effective execution-state management is conceptually distinct from ensuring that previously established functional correctness is preserved during subsequent execution. If additional modifications can compromise previously correct results, understanding agent reliability requires examining not only whether a correct state is reached but also how that state evolves throughout continued execution.
-                    </p>
-
-                    <p>
-                        Despite these advances, existing research has primarily examined accuracy changes before and after self-correction, structural code degradation during iterative development, performance improvements through execution-state management, or final task resolution following the provision of accurate information. Comparatively less attention has been devoted to the longitudinal evolution of functionally correct repository states during continued agent execution, particularly when correctness is lost and whether it can subsequently be restored. Importantly, structural code deterioration should be distinguished from functional regression, while access to accurate information or eventual task success does not necessarily reveal intermediate transitions from correct to incorrect states. To address this gap, this study conceptualizes error recovery and continued execution in LLM-based software engineering agents as a sequence of functional correctness state transitions. Specifically, the study establishes controlled, functionally correct repository states under matched task and trajectory-prefix conditions and evaluates subsequent repository states after individual agent actions. This approach enables the analysis of correction persistence, functional regression, and subsequent recovery throughout continued execution. Furthermore, by comparing conditions with and without explicit correctness feedback, the study investigates how such feedback influences the occurrence and timing of functional regression. Accordingly, this study addresses three research questions: (RQ1) How frequently, and at what points during continued execution, do LLM-based software engineering agents regress from functionally correct to incorrect repository states? (RQ2) How does explicit correctness feedback affect the occurrence and timing of functional regression? (RQ3) To what extent do agents recover functional correctness after regression, and what subsequent actions are associated with recovery? By shifting the analytical focus from terminal task success to the preservation, loss, and restoration of functional correctness, this study seeks to provide a more fine-grained understanding of agent reliability and empirical insights into the design of robust error recovery and execution-state management mechanisms.
-                    </p>
-                </div>
-
-            </div>
+            <div class="research-note-content"></div>
         </section>
     </div>
 
+
+    <dialog class="project-modal-panel paper-dialog" id="paper-dialog" aria-labelledby="research-library-title">
+        <form method="dialog">
+            <button class="project-modal-close" type="submit" aria-label="Close CSV viewer" autofocus>
+                ×
+            </button>
+        </form>
+
+        <div class="research-heading">
+            <h2 id="research-library-title">Scopus Papers for Current Research</h2>
+            <a
+                id="paper-csv-download"
+                href="../assets/projects/scopus_papers.csv"
+                class="dataset-download"
+                download
+            >
+                Download CSV
+            </a>
+        </div>
+
+        <div class="research-toolbar" aria-label="Research paper controls">
+            <label class="research-search">
+                <span>Search papers</span>
+                <input
+                    type="search"
+                    id="paperSearch"
+                    placeholder="Title, author, source, DOI"
+                    autocomplete="off"
+                    disabled
+                >
+            </label>
+
+            <label class="research-year">
+                <span>Year</span>
+                <select id="paperYear" disabled>
+                    <option value="">All years</option>
+                </select>
+            </label>
+        </div>
+
+        <p class="research-status" id="paperStatus" role="status">
+            Loading paper data...
+        </p>
+
+        <div class="paper-table-wrap" role="region" aria-label="Scopus papers table" tabindex="0">
+            <table class="paper-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Authors</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">DOI</th>
+                    </tr>
+                </thead>
+                <tbody id="paperTableBody">
+                    <tr>
+                        <td colspan="5">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dialog>
 
     <footer>
         <p>
@@ -288,64 +272,15 @@
     </footer>
 
     <script>
-        const modal = document.getElementById("research-note-modal");
-        const openButton = document.querySelector("[data-open-modal='research-note-modal']");
-        const closeButtons = modal.querySelectorAll("[data-close-modal]");
-        const paperCsvPath = "../assets/projects/scopus_papers.csv";
+        const paperDialog = document.getElementById("paper-dialog");
+        const openPaperDialog = document.getElementById("open-paper-dialog");
+        const paperCsvPath = document.getElementById("paper-csv-download").href;
         const paperTableBody = document.getElementById("paperTableBody");
         const paperStatus = document.getElementById("paperStatus");
         const paperSearch = document.getElementById("paperSearch");
         const paperYear = document.getElementById("paperYear");
-        const languageButtons = modal.querySelectorAll("[data-language-button]");
-        const languagePanels = modal.querySelectorAll("[data-language-panel]");
         let papers = [];
-
-        function openModal() {
-            modal.hidden = false;
-            document.body.classList.add("modal-open");
-            modal.querySelector(".project-modal-close").focus();
-        }
-
-        function closeModal() {
-            modal.hidden = true;
-            document.body.classList.remove("modal-open");
-            openButton.focus();
-        }
-
-        openButton.addEventListener("click", openModal);
-
-        closeButtons.forEach((button) => {
-            button.addEventListener("click", closeModal);
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !modal.hidden) {
-                closeModal();
-            }
-        });
-
-        function setResearchNoteLanguage(selectedLanguage) {
-            languageButtons.forEach((currentButton) => {
-                const isActive = currentButton.dataset.languageButton === selectedLanguage;
-                currentButton.classList.toggle("active", isActive);
-                currentButton.setAttribute("aria-pressed", String(isActive));
-            });
-
-            languagePanels.forEach((panel) => {
-                const panelLanguage = panel.dataset.languagePanel.replace("-title", "");
-                const isActive = panelLanguage === selectedLanguage;
-                panel.classList.toggle("active", isActive);
-                panel.hidden = !isActive;
-            });
-        }
-
-        languageButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                setResearchNoteLanguage(button.dataset.languageButton);
-            });
-        });
-
-        setResearchNoteLanguage("ko");
+        let paperLoad;
 
         function parseCsv(text) {
             const rows = [];
@@ -489,6 +424,9 @@
         }
 
         async function loadPapers() {
+            paperStatus.textContent = "Loading paper data...";
+            paperTableBody.rows[0].cells[0].textContent = "Loading...";
+
             try {
                 const response = await fetch(paperCsvPath);
 
@@ -501,7 +439,10 @@
 
                 populateYearFilter();
                 renderPapers();
+                paperSearch.disabled = false;
+                paperYear.disabled = false;
             } catch (error) {
+                paperLoad = null;
                 paperStatus.textContent = "Paper data could not be loaded in this browser. Use the download link to open the CSV file.";
                 paperTableBody.replaceChildren();
 
@@ -516,7 +457,11 @@
 
         paperSearch.addEventListener("input", renderPapers);
         paperYear.addEventListener("change", renderPapers);
-        loadPapers();
+
+        openPaperDialog.addEventListener("click", () => {
+            paperDialog.showModal();
+            paperLoad ??= loadPapers();
+        });
     </script>
 
 </body>

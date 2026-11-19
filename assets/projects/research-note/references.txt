@@ -1,0 +1,15 @@
+- Gou, Z., Shao, Z., Gong, Y., Shen, Y., Yang, Y., Duan, N., & Chen, W. (2024). CRITIC: Large language models can self-correct with tool-interactive critiquing. International Conference on Learning Representations. <https://arxiv.org/abs/2305.11738>
+
+- Huang, J., Chen, X., Mishra, S., Zheng, H. S., Yu, A., Song, X., & Zhou, D. (2024). Large language models cannot self-correct reasoning yet. International Conference on Learning Representations. <https://arxiv.org/abs/2310.01798>
+
+- Jimenez, C. E., Yang, J., Wettig, A., Yao, S., Pei, K., Press, O., & Narasimhan, K. (2024). SWE-bench: Can language models resolve real-world GitHub issues? International Conference on Learning Representations. <https://arxiv.org/abs/2310.06770>
+
+- Kim, M., Wang, D., Cui, S., Farmahinifarahani, F., Zhuo, T. Y., Garg, S., Ray, B., Mukherjee, R., & Kumar, V. (2026). Coherence collapse: Diagnosing why code agents fail after reaching the right code. arXiv preprint. <https://arxiv.org/abs/2603.24631>
+
+- Li, K., Jin, Q., Zhu, L., Huang, X., Wu, Y., Zhang, Y., Zhang, X., Jin, Z., Huang, Y., Nallipogu, E., Zhang, C., Kang, Y., Rajmohan, S., Lin, Q., Lee, W., & Zhang, D. (2026). ORACLE-SWE: Quantifying the contribution of critical information signals on SWE agents. arXiv preprint. <https://arxiv.org/abs/2604.07789>
+
+- Madaan, A., Tandon, N., Gupta, P., Hallinan, S., Gao, L., Wiegreffe, S., Alon, U., Dziri, N., Prabhumoye, S., Yang, Y., Gupta, S., Majumder, B. P., Hermann, K., Welleck, S., Yazdanbakhsh, A., & Clark, P. (2023). Self-Refine: Iterative refinement with self-feedback. Advances in Neural Information Processing Systems, 36. <https://arxiv.org/abs/2303.17651>
+
+- OpenAI. (2024, August 13). Introducing SWE-bench Verified. <https://openai.com/index/introducing-swe-bench-verified/>
+
+- Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao, S., Narasimhan, K., & Press, O. (2024). SWE-agent: Agent-computer interfaces enable automated software engineering. Advances in Neural Information Processing Systems, 37. <https://arxiv.org/abs/2405.15793>
