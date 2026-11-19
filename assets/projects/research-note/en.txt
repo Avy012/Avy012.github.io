@@ -1,4 +1,4 @@
-# Correction Persistence and Functional Regression in LLM-Based Software Agents
+# Improving Task Automation Reliability in LLM-Based Software Agents through Oracle-Based Initialization
 
 ## Abstract
 

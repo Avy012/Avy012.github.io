@@ -11,7 +11,7 @@ globalThis.siteTextFallback = {
         ""
     ],
     "projects/research-note/en.txt": [
-        "# Correction Persistence and Functional Regression in LLM-Based Software Agents\r",
+        "# Improving Task Automation Reliability in LLM-Based Software Agents through Oracle-Based Initialization\r",
         "\r",
         "## Abstract\r",
         "\r",
@@ -63,7 +63,7 @@ globalThis.siteTextFallback = {
         ""
     ],
     "projects/research-note/ko.txt": [
-        "# LLM 기반 소프트웨어 에이전트의 교정 상태 유지와 기능적 회귀 분석\r",
+        "# LLM 기반 소프트웨어 에이전트의 업무 자동화 신뢰성 향상 방안: Oracle 기반 초기화를 활용하여\r",
         "\r",
         "## 초록\r",
         "\r",
