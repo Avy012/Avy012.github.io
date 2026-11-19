@@ -1,9 +1,46 @@
-async function fetchTextContent(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`Could not load ${url}`);
+const textContentDirectory = new URL(".", document.currentScript.src);
+let textContentFallback;
+
+function loadTextContentFallback() {
+    if (!textContentFallback) {
+        textContentFallback = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = new URL("text-content-fallback.js", textContentDirectory).href;
+            script.onload = () => resolve(globalThis.siteTextFallback);
+            script.onerror = () => {
+                script.remove();
+                reject(new Error("Could not load the bundled site content"));
+            };
+            document.head.append(script);
+        }).catch((error) => {
+            textContentFallback = null;
+            throw error;
+        });
     }
-    return response.text();
+    return textContentFallback;
+}
+
+async function fetchTextContent(url) {
+    const source = new URL(url, document.baseURI);
+    if (source.protocol !== "file:") {
+        try {
+            const response = await fetch(source);
+            if (response.ok) {
+                return await response.text();
+            }
+        } catch {
+            // Static previews can still read the bundled copy.
+        }
+    }
+
+    if (source.href.startsWith(textContentDirectory.href)) {
+        const bundled = await loadTextContentFallback();
+        const filename = source.pathname.slice(textContentDirectory.pathname.length);
+        if (bundled && Object.hasOwn(bundled, filename)) {
+            return bundled[filename].join("\n");
+        }
+    }
+    throw new Error(`Could not load ${source.href}`);
 }
 
 function renderTextParagraph(text) {

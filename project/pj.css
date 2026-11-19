@@ -340,6 +340,10 @@ body:has(.paper-dialog[open]) {
     margin: 26px 0 10px;
 }
 
+.research-note-content strong {
+    color: #1d392c;
+}
+
 .research-note-content p {
     margin-bottom: 14px;
 }

@@ -2,6 +2,6 @@ Hello! My name is **Dahee Kim**. I am currently pursuing a master's degree in **
 
 I received my bachelor's degree in **Computer Science from Hansung University**, where I developed a strong interest in applying machine learning and deep learning techniques to real-world problems. Through coursework, research, and project experience, I became particularly interested in how AI models represent, interpret, and utilize complex information.
 
-From 2023 to 2024, I studied abroad at **Northeastern Illinois University** in the United States. During my exchange program, I studied subjects including Modern Database Management, Artificial Intelligence, Server-Side Web Programming, and Event-Driven Programming. [YouTube](https://www.youtube.com/watch?v=UtYhpnRYgFo)
+From 2023 to 2024, I studied abroad at **Northeastern Illinois University** in the United States. During my exchange program, I studied subjects including Modern Database Management, Artificial Intelligence, Server-Side Web Programming, and Event-Driven Programming.
 
 My current goal is to deepen my understanding of modern AI systems and explore research problems involving language models, representation learning, reasoning, and multimodal information. I am especially interested in developing methods that go beyond simply applying larger models and instead improve how models understand and use information.

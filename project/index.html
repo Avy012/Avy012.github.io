@@ -8,8 +8,8 @@
         content="Selected projects by Dahee Kim in data analysis, AI, and recommender systems."
     >
     <link rel="stylesheet" href="../index.css?v=20261001">
-    <link rel="stylesheet" href="./pj.css?v=20261119-6">
-    <script src="../assets/text-content.js" defer></script>
+    <link rel="stylesheet" href="./pj.css?v=20261119-7">
+    <script src="../assets/text-content.js?v=20261119-1" defer></script>
     <script src="./research-note.js" defer></script>
     <title>Dahee Kim | Projects</title>
 </head>
@@ -428,13 +428,7 @@
             paperTableBody.rows[0].cells[0].textContent = "Loading...";
 
             try {
-                const response = await fetch(paperCsvPath);
-
-                if (!response.ok) {
-                    throw new Error("Paper data could not be loaded.");
-                }
-
-                const csvText = await response.text();
+                const csvText = await fetchTextContent(paperCsvPath);
                 papers = rowsToObjects(parseCsv(csvText));
 
                 populateYearFilter();
